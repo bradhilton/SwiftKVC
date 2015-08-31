@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SwiftKVC
+import SwiftKVC
 
 class SwiftKVCTests: XCTestCase {
     
