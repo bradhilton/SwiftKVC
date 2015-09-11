@@ -7,12 +7,12 @@
 //
 
 public enum Error : ErrorType, CustomStringConvertible {
-    case ModelCannotBeClass(type: Any.Type)
     case TypeDoesNotConformToProperty(type: Any.Type)
+    case CannotSetTypeAsType(x: Any.Type, y: Any.Type)
     public var description: String {
         switch self {
-        case .ModelCannotBeClass(type: let type): return "Model cannot be a class. Try changing the definition of \(type) to a struct."
-        case .TypeDoesNotConformToProperty(type: let type): return "\(type) does not conform to Dynamic.Property."
+        case .TypeDoesNotConformToProperty(type: let type): return "\(type) does not conform to SwiftKVC.Property."
+        case .CannotSetTypeAsType(x: let x, y: let y): return "Cannot set value of type \(x) as \(y)."
         }
     }
 }

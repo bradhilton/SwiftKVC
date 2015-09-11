@@ -35,12 +35,11 @@ extension Model {
     }
     
     public mutating func setValue(value: Property?, forKey key: String) throws {
-        guard (self as? AnyObject) == nil else { throw Error.ModelCannotBeClass(type: self.dynamicType) }
         var offset = 0
         for child in Mirror(reflecting: self).children {
             guard let property = child.value.dynamicType as? Property.Type else { throw Error.TypeDoesNotConformToProperty(type: child.value.dynamicType) }
             if child.label == key {
-                self.codeValue(value, withMirror: child, atOffset: offset)
+                try self.codeValue(value, type: child.value.dynamicType, offset: offset)
                 return
             } else {
                 offset += property.size()
@@ -48,28 +47,34 @@ extension Model {
         }
     }
     
-    mutating func codeValue(value: Property?, withMirror child: Mirror.Child, atOffset offset: Int) {
-        withUnsafePointer(&self) { (ptr) -> () in
-            let pointer = UnsafePointer<Int64>(ptr).advancedBy(offset)
-            if let optionalPropertyType = child.value.dynamicType as? OptionalProperty.Type, let propertyType = optionalPropertyType.propertyType() {
-                if var optionalValue = value where x(optionalValue, isY: propertyType) {
-                    optionalValue.codeOptionalInto(pointer)
-                } else if let nilValue = child.value.dynamicType as? OptionalProperty.Type {
-                    nilValue.codeNilInto(pointer)
-                }
-            } else if var sureValue = value where x(sureValue, isY: child.value.dynamicType) {
-                sureValue.codeInto(pointer)
-            }
+    mutating func pointerAdvancedBy(offset: Int) -> UnsafePointer<Int> {
+        if let object = self as? AnyObject {
+            return UnsafePointer(bitPattern: unsafeAddressOf(object).hashValue).advancedBy(offset + 2)
+        } else {
+            return withUnsafePointer(&self) { UnsafePointer($0).advancedBy(offset) }
         }
     }
     
-    func x(x: Any, isY y: Any.Type) -> Bool {
+    mutating func codeValue(value: Property?, type: Any.Type, offset: Int) throws {
+        let pointer = pointerAdvancedBy(offset)
+        if let optionalPropertyType = type as? OptionalProperty.Type, let propertyType = optionalPropertyType.propertyType() {
+            if var optionalValue = value {
+                try x(optionalValue, isY: propertyType)
+                optionalValue.codeOptionalInto(pointer)
+            } else if let nilValue = type as? OptionalProperty.Type {
+                nilValue.codeNilInto(pointer)
+            }
+        } else if var sureValue = value {
+            try x(sureValue, isY: type)
+            sureValue.codeInto(pointer)
+        }
+    }
+    
+    func x(x: Any, isY y: Any.Type) throws {
         if x.dynamicType == y {
-            return true
         } else if let x = x as? AnyObject, let y = y as? AnyClass where x.isKindOfClass(y) {
-            return true
         } else {
-            return false
+            throw Error.CannotSetTypeAsType(x: x.dynamicType, y: y)
         }
     }
     

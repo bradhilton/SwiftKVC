@@ -11,26 +11,46 @@ import SwiftKVC
 
 class SwiftKVCTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+        var user = User()
+        print(user.name)
+        user["name"] = "Larry"
+        print(user.name)
+        var transaction = Transaction()
+        do {
+            try transaction.setValue(NSDate(), forKey: "date")
+        } catch {
+            print(error)
+        }
+        do {
+            try transaction.setValue(Currency.BitCoin, forKey: "currency")
+        } catch {
+            print(error)
         }
     }
+    
+}
+
+class User : Model {
+    var name = "Brad"
+    var age = 26
+    var transactions = [Transaction]()
+}
+
+struct Transaction : Model {
+    var total: Double = 0
+    var currency = Currency.USDollar
+    var date: NSDate = NSDate(timeIntervalSinceReferenceDate: 0.0)
+}
+
+enum Currency : String, Property {
+    
+    case USDollar = "USDollar"
+    case BitCoin = "BitCoin"
+    case Quint = "Quint"
+    case GoldDollar = "GoldDollar"
+    case SilverDollar = "SilverDollar"
+    case PlatinumDollar = "PlatinumDollar"
+    case Gold = "Gold"
     
 }
