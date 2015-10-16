@@ -7,10 +7,9 @@
 //
 
 /**
-    Enables dynamic, KVC-style behavior for native Swift structures.
+    Enables dynamic, KVC-style behavior for native Swift classes and structures.
 
     Keep in mind the following caveats:
-    - Model must be a struct (i.e., not a class or enum)
     - All properties must conform to the Property protocol
     - Properties may not be implicitly unwrapped optionals
 */
@@ -30,7 +29,11 @@ extension Model {
             }
         }
         set {
-            _ = try? setValue(newValue, forKey: key)
+            do {
+                try setValue(newValue, forKey: key)
+            } catch {
+                
+            }
         }
     }
     

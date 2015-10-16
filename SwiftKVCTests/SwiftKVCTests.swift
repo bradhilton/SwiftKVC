@@ -11,46 +11,78 @@ import SwiftKVC
 
 class SwiftKVCTests: XCTestCase {
     
-    func testExample() {
-        var user = User()
-        print(user.name)
-        user["name"] = "Larry"
-        print(user.name)
-        var transaction = Transaction()
-        do {
-            try transaction.setValue(NSDate(), forKey: "date")
-        } catch {
-            print(error)
-        }
-        do {
-            try transaction.setValue(Currency.BitCoin, forKey: "currency")
-        } catch {
-            print(error)
-        }
+    var john: Person {
+        return Person(firstName: "John", lastName: "Smith", age: 45)
+    }
+    
+    var jacob: Person {
+        return Person(firstName: "Jacob", middleName: "Tyler", lastName: "Smith", age: 36, friends: [jack, jane], bestFriend: jane)
+    }
+    
+    var jack: Person {
+        return Person(firstName: "Jack", lastName: "Smith", age: 51)
+    }
+    
+    var jane: Person {
+        return Person(firstName: "Jane", lastName: "Smith", age: 23)
+    }
+    
+    func testPerson() {
+        var person = john
+        assert(person: john, sameAsPerson: person)
+        person["firstName"] = jacob.firstName
+        person["middleName"] = jacob.middleName
+        person["lastName"] = jacob.lastName
+        person["age"] = jacob.age
+        person["friends"] = jacob.friends
+        person["bestFriend"] = jacob.bestFriend
+        assert(person: jacob, sameAsPerson: person)
+    }
+    
+    func testNullabilty() {
+        var person = john
+        XCTAssert(person.middleName == nil)
+        person["middleName"] = "Jacob"
+        XCTAssert(person.middleName == "Jacob")
+        person["firstName"] = nil
+        XCTAssert(person.firstName == john.firstName)
+    }
+    
+    func assert(person lh: Person, sameAsPerson rh: Person) {
+        XCTAssert(lh.firstName == rh["firstName"] as? String)
+        XCTAssert(lh.middleName == rh["middleName"] as? String)
+        XCTAssert(lh.lastName == rh["lastName"] as? String)
+        XCTAssert(lh.age == rh["age"] as? Int)
+        XCTAssert(lh.friends == rh["friends"] as! [Person])
+        XCTAssert(lh.bestFriend == rh["bestFriend"] as? Person)
     }
     
 }
 
-class User : Model {
-    var name = "Brad"
-    var age = 26
-    var transactions = [Transaction]()
+class Person : Model, Equatable {
+    
+    var firstName: String
+    var middleName: String?
+    var lastName: String
+    var age: Int
+    var friends: [Person]
+    var bestFriend: Person?
+    
+    var fullName: String {
+        return firstName + (middleName != nil ? " \(middleName!) " : " ") + lastName
+    }
+    
+    init(firstName: String, middleName: String? = nil, lastName: String, age: Int, friends: [Person] = [], bestFriend: Person? = nil) {
+        self.firstName = firstName
+        self.middleName = middleName
+        self.lastName = lastName
+        self.age = age
+        self.friends = friends
+        self.bestFriend = bestFriend
+    }
+    
 }
 
-struct Transaction : Model {
-    var total: Double = 0
-    var currency = Currency.USDollar
-    var date: NSDate = NSDate(timeIntervalSinceReferenceDate: 0.0)
-}
-
-enum Currency : String, Property {
-    
-    case USDollar = "USDollar"
-    case BitCoin = "BitCoin"
-    case Quint = "Quint"
-    case GoldDollar = "GoldDollar"
-    case SilverDollar = "SilverDollar"
-    case PlatinumDollar = "PlatinumDollar"
-    case Gold = "Gold"
-    
+func == (lh: Person, rh: Person) -> Bool {
+    return lh.fullName == rh.fullName
 }
