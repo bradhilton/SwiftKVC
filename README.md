@@ -1,5 +1,21 @@
 # SwiftKVC
 
+`SwiftKVC` brings key-value coding to native Swift classes and structures. You can easily set and access properties just using a subscript:
+```swift
+var person = Person()
+person["name"] = "John"
+```
+Or use the more verbose method to catch potential errors:
+```swift
+var person = Person()
+do {
+  try person.setValue("John", forKey:"name")
+} catch {
+  print(error)
+}
+```
+`SwiftKV`C brings the power of Cocoa style key-value coding to Swift.
+
 ## Installation
 
 `SwiftKVC` is available through [CocoaPods](http://cocoapods.org). To install, simply include the following lines in your podfile:
