@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
     s.name         = "SwiftKVC"
     s.version      = "1.0.0"
-    s.summary      = "Key-Value Coding (KVC) for Swift structs"
+    s.summary      = "Key-Value Coding (KVC) for native Swift classes and structs"
     s.description  = <<-DESC
-                        SwiftKVC enables Key-Value Coding (KVC) for native Swift structs.
+                        SwiftKVC enables Key-Value Coding (KVC) for native Swift classes and structs.
                         DESC
     s.homepage     = "https://github.com/bradhilton/SwiftKVC"
     s.license      = { :type => "MIT", :file => "LICENSE" }
