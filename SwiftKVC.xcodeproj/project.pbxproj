@@ -39,6 +39,7 @@
 		A21594451B94D7E100F2F665 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A21594471B94D7E600F2F665 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		A21594491B94D85C00F2F665 /* SwiftKVC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SwiftKVC.podspec; sourceTree = "<group>"; };
+		A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftKVC.playground; path = SwiftKVC/SwiftKVC.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				A21594491B94D85C00F2F665 /* SwiftKVC.podspec */,
+				A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */,
 				A21594291B94D79300F2F665 /* SwiftKVC */,
 				A21594351B94D79300F2F665 /* SwiftKVCTests */,
 				A21594281B94D79300F2F665 /* Products */,
@@ -399,6 +401,7 @@
 				A215943D1B94D79300F2F665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A215943E1B94D79300F2F665 /* Build configuration list for PBXNativeTarget "SwiftKVCTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +410,7 @@
 				A21594401B94D79300F2F665 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
