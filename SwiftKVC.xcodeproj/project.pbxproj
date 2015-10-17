@@ -39,7 +39,7 @@
 		A21594451B94D7E100F2F665 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A21594471B94D7E600F2F665 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		A21594491B94D85C00F2F665 /* SwiftKVC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SwiftKVC.podspec; sourceTree = "<group>"; };
-		A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = SwiftKVC.playground; path = SwiftKVC/SwiftKVC.playground; sourceTree = "<group>"; };
+		A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftKVC.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
