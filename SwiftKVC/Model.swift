@@ -22,11 +22,7 @@ extension Model {
     */
     public subscript (key: String) -> Property? {
         get {
-            do {
-                return try valueForKey(key)
-            } catch {
-                return nil
-            }
+            return try? valueForKey(key)
         }
         set {
             do {
