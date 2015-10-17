@@ -66,7 +66,7 @@ struct User : Model {
   var email: String! // Will not work as expected and may result in a fatal error if set or accessed
 }
 ```
-There is another caveat when using classes. If your class inherits from a superclass with private properties, SwiftKVC will not work as expected and may fail.
+There is another caveat when using classes. If your class inherits from a superclass with private properties, `SwiftKVC` will not work as expected and may fail.
 ## Author
 
 Brad Hilton, brad@skyvive.com
