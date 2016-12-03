@@ -12,33 +12,33 @@ public protocol Property {}
 extension Property {
     
     static func size() -> Int {
-        return Int(ceil(Double(sizeof(self))/Double(sizeof(Int))))
+        return Int(ceil(Double(MemoryLayout<self>.size)/Double(MemoryLayout<Int>.size)))
     }
     
     static func type() -> Self.Type.Type {
-        return self.dynamicType
+        return type(of: self)
     }
     
-    mutating func codeInto(pointer: UnsafePointer<Int>) {
-        (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Self>).memory = self
+    mutating func codeInto(_ pointer: UnsafePointer<Int>) {
+        (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Self>).pointee = self
     }
     
-    mutating func codeOptionalInto(pointer: UnsafePointer<Int>) {
-        (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Optional<Self>>).memory = self
+    mutating func codeOptionalInto(_ pointer: UnsafePointer<Int>) {
+        (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Optional<Self>>).pointee = self
     }
 
 }
 
 protocol OptionalProperty : Property {
-    static func codeNilInto(pointer: UnsafePointer<Int>)
+    static func codeNilInto(_ pointer: UnsafePointer<Int>)
     static func propertyType() -> Property.Type?
     func property() -> Property?
 }
 
 extension Optional : OptionalProperty {
     
-    static func codeNilInto(pointer: UnsafePointer<Int>) {
-        (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Optional>).memory = nil
+    static func codeNilInto(_ pointer: UnsafePointer<Int>) {
+        (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Optional>).pointee = nil
     }
     
     static func propertyType() -> Property.Type? {
@@ -47,7 +47,7 @@ extension Optional : OptionalProperty {
     
     func property() -> Property? {
         switch self {
-        case .Some(let property):
+        case .some(let property):
             if let property = property as? Property {
                 return property
             } else {

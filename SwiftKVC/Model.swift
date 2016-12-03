@@ -37,12 +37,12 @@ extension Model {
         }
     }
     
-    public mutating func setValue(value: Property?, forKey key: String) throws {
+    public mutating func setValue(_ value: Property?, forKey key: String) throws {
         var offset = 0
         for child in Mirror(reflecting: self).children {
-            guard let property = child.value.dynamicType as? Property.Type else { throw Error.TypeDoesNotConformToProperty(type: child.value.dynamicType) }
+            guard let property = type(of: (child.value) as AnyObject) as? Property.Type else { throw Error.typeDoesNotConformToProperty(type: type(of: child.value)) }
             if child.label == key {
-                try self.codeValue(value, type: child.value.dynamicType, offset: offset)
+                try self.codeValue(value, type: type(of: (child.value) as AnyObject), offset: offset)
                 return
             } else {
                 offset += property.size()
@@ -50,15 +50,15 @@ extension Model {
         }
     }
     
-    mutating func pointerAdvancedBy(offset: Int) -> UnsafePointer<Int> {
+    mutating func pointerAdvancedBy(_ offset: Int) -> UnsafePointer<Int> {
         if let object = self as? AnyObject {
-            return UnsafePointer(bitPattern: unsafeAddressOf(object).hashValue).advancedBy(offset + 2)
+            return UnsafePointer(bitPattern: Unmanaged.passUnretained(object).toOpaque().hashValue).advancedBy(offset + 2)
         } else {
-            return withUnsafePointer(&self) { UnsafePointer($0).advancedBy(offset) }
+            return withUnsafePointer(to: &self) { UnsafePointer($0).advancedBy(offset) }
         }
     }
     
-    mutating func codeValue(value: Property?, type: Any.Type, offset: Int) throws {
+    mutating func codeValue(_ value: Property?, type: Any.Type, offset: Int) throws {
         let pointer = pointerAdvancedBy(offset)
         if let optionalPropertyType = type as? OptionalProperty.Type, let propertyType = optionalPropertyType.propertyType() {
             if var optionalValue = value {
@@ -73,24 +73,24 @@ extension Model {
         }
     }
     
-    func x(x: Any, isY y: Any.Type) throws {
-        if x.dynamicType == y {
-        } else if let x = x as? AnyObject, let y = y as? AnyClass where x.isKindOfClass(y) {
+    func x(_ x: Any, isY y: Any.Type) throws {
+        if type(of: (x) as AnyObject) == y {
+        } else if let x = x as? AnyObject, let y = y as? AnyClass, x.isKind(of: y) {
         } else {
-            throw Error.CannotSetTypeAsType(x: x.dynamicType, y: y)
+            throw Error.cannotSetTypeAsType(x: type(of: x), y: y)
         }
     }
     
-    public func valueForKey(key: String) throws -> Property? {
+    public func valueForKey(_ key: String) throws -> Property? {
         var value: Property?
         for child in Mirror(reflecting: self).children {
-            if child.label == key && String(child.value) != "nil" {
+            if child.label == key && String(describing: child.value) != "nil" {
                 if let property = child.value as? OptionalProperty {
                     value = property.property()
                 } else if let property = child.value as? Property {
                     value = property
                 } else {
-                    throw Error.TypeDoesNotConformToProperty(type: child.value.dynamicType)
+                    throw Error.typeDoesNotConformToProperty(type: type(of: child.value))
                 }
                 break
             }

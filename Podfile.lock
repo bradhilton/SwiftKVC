@@ -1,0 +1,12 @@
+PODS:
+  - Reflection (0.14.3)
+
+DEPENDENCIES:
+  - Reflection (~> 0.14.3)
+
+SPEC CHECKSUMS:
+  Reflection: 93327e50981227ac33c18274fcbaed33b1127811
+
+PODFILE CHECKSUM: bcac3d8a0216ded75aec30993608dbd4bd7f6720
+
+COCOAPODS: 1.1.1

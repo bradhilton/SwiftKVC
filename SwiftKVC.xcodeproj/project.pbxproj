@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B18363CC3771E95F7DD183D /* Pods_SwiftKVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85AEE5DE8823258B1A3F49B0 /* Pods_SwiftKVC.framework */; };
 		A215942B1B94D79300F2F665 /* SwiftKVC.h in Headers */ = {isa = PBXBuildFile; fileRef = A215942A1B94D79300F2F665 /* SwiftKVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A21594321B94D79300F2F665 /* SwiftKVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* SwiftKVC.framework */; settings = {ASSET_TAGS = (); }; };
+		A21594321B94D79300F2F665 /* SwiftKVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* SwiftKVC.framework */; };
 		A21594371B94D79300F2F665 /* SwiftKVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594361B94D79300F2F665 /* SwiftKVCTests.swift */; };
-		A21594421B94D7CD00F2F665 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* Model.swift */; settings = {ASSET_TAGS = (); }; };
-		A21594441B94D7DB00F2F665 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594431B94D7DB00F2F665 /* Property.swift */; settings = {ASSET_TAGS = (); }; };
-		A21594461B94D7E100F2F665 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594451B94D7E100F2F665 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		A21594481B94D7E600F2F665 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594471B94D7E600F2F665 /* Error.swift */; settings = {ASSET_TAGS = (); }; };
-		A215944A1B94D85C00F2F665 /* SwiftKVC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A21594491B94D85C00F2F665 /* SwiftKVC.podspec */; settings = {ASSET_TAGS = (); }; };
+		A21594421B94D7CD00F2F665 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* Model.swift */; };
+		A21594441B94D7DB00F2F665 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594431B94D7DB00F2F665 /* Property.swift */; };
+		A21594461B94D7E100F2F665 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594451B94D7E100F2F665 /* Extensions.swift */; };
+		A21594481B94D7E600F2F665 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594471B94D7E600F2F665 /* Error.swift */; };
+		A215944A1B94D85C00F2F665 /* SwiftKVC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A21594491B94D85C00F2F665 /* SwiftKVC.podspec */; };
+		FC1762235DCB69D364D6D6A2 /* Pods_SwiftKVC_SwiftKVCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678E4C07F80BCF1342839B59 /* Pods_SwiftKVC_SwiftKVCTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		377B9BFFB6D233C8B83CEF49 /* Pods-SwiftKVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKVC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftKVC/Pods-SwiftKVC.debug.xcconfig"; sourceTree = "<group>"; };
+		678E4C07F80BCF1342839B59 /* Pods_SwiftKVC_SwiftKVCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftKVC_SwiftKVCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85AEE5DE8823258B1A3F49B0 /* Pods_SwiftKVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftKVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94176040666125825398DF07 /* Pods-SwiftKVC-SwiftKVCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKVC-SwiftKVCTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftKVC-SwiftKVCTests/Pods-SwiftKVC-SwiftKVCTests.release.xcconfig"; sourceTree = "<group>"; };
 		A21594271B94D79300F2F665 /* SwiftKVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftKVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A215942A1B94D79300F2F665 /* SwiftKVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftKVC.h; sourceTree = "<group>"; };
 		A215942C1B94D79300F2F665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -39,7 +45,10 @@
 		A21594451B94D7E100F2F665 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A21594471B94D7E600F2F665 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		A21594491B94D85C00F2F665 /* SwiftKVC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SwiftKVC.podspec; sourceTree = "<group>"; };
+		A298FE591DF360B900E916FB /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftKVC.playground; sourceTree = "<group>"; };
+		AEABA5BE5A3DBDF33D127BC6 /* Pods-SwiftKVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKVC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftKVC/Pods-SwiftKVC.release.xcconfig"; sourceTree = "<group>"; };
+		E4749953BA1EC37E91F84130 /* Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftKVC-SwiftKVCTests/Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B18363CC3771E95F7DD183D /* Pods_SwiftKVC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,12 +65,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				A21594321B94D79300F2F665 /* SwiftKVC.framework in Frameworks */,
+				FC1762235DCB69D364D6D6A2 /* Pods_SwiftKVC_SwiftKVCTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1212B77AE41DB9655FB15265 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85AEE5DE8823258B1A3F49B0 /* Pods_SwiftKVC.framework */,
+				678E4C07F80BCF1342839B59 /* Pods_SwiftKVC_SwiftKVCTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AA4EB5056AC4C812293ED3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				377B9BFFB6D233C8B83CEF49 /* Pods-SwiftKVC.debug.xcconfig */,
+				AEABA5BE5A3DBDF33D127BC6 /* Pods-SwiftKVC.release.xcconfig */,
+				E4749953BA1EC37E91F84130 /* Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig */,
+				94176040666125825398DF07 /* Pods-SwiftKVC-SwiftKVCTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A215941D1B94D79300F2F665 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +100,9 @@
 				A21594291B94D79300F2F665 /* SwiftKVC */,
 				A21594351B94D79300F2F665 /* SwiftKVCTests */,
 				A21594281B94D79300F2F665 /* Products */,
+				2AA4EB5056AC4C812293ED3A /* Pods */,
+				1212B77AE41DB9655FB15265 /* Frameworks */,
+				A298FE591DF360B900E916FB /* Podfile */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,10 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A215943B1B94D79300F2F665 /* Build configuration list for PBXNativeTarget "SwiftKVC" */;
 			buildPhases = (
+				C1B38A47AE4776D2DCF11F14 /* [CP] Check Pods Manifest.lock */,
 				A21594221B94D79300F2F665 /* Sources */,
 				A21594231B94D79300F2F665 /* Frameworks */,
 				A21594241B94D79300F2F665 /* Headers */,
 				A21594251B94D79300F2F665 /* Resources */,
+				1AA8DDFF282EB434B46DFFA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -139,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A215943E1B94D79300F2F665 /* Build configuration list for PBXNativeTarget "SwiftKVCTests" */;
 			buildPhases = (
+				99ABD90C0EA7883353B6C527 /* [CP] Check Pods Manifest.lock */,
 				A215942D1B94D79300F2F665 /* Sources */,
 				A215942E1B94D79300F2F665 /* Frameworks */,
 				A215942F1B94D79300F2F665 /* Resources */,
+				CF0EE137E88A9D1AC94F9E15 /* [CP] Embed Pods Frameworks */,
+				5199533A922A0BF6DFE8FB6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,9 +204,11 @@
 				TargetAttributes = {
 					A21594261B94D79300F2F665 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 					};
 					A21594301B94D79300F2F665 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -206,6 +247,84 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AA8DDFF282EB434B46DFFA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftKVC/Pods-SwiftKVC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5199533A922A0BF6DFE8FB6D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftKVC-SwiftKVCTests/Pods-SwiftKVC-SwiftKVCTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99ABD90C0EA7883353B6C527 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1B38A47AE4776D2DCF11F14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF0EE137E88A9D1AC94F9E15 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftKVC-SwiftKVCTests/Pods-SwiftKVC-SwiftKVCTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A21594221B94D79300F2F665 /* Sources */ = {
@@ -329,6 +448,7 @@
 		};
 		A215943C1B94D79300F2F665 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 377B9BFFB6D233C8B83CEF49 /* Pods-SwiftKVC.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -342,11 +462,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A215943D1B94D79300F2F665 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEABA5BE5A3DBDF33D127BC6 /* Pods-SwiftKVC.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -359,26 +481,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyvive.SwiftKVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		A215943F1B94D79300F2F665 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4749953BA1EC37E91F84130 /* Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SwiftKVCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyvive.SwiftKVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A21594401B94D79300F2F665 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94176040666125825398DF07 /* Pods-SwiftKVC-SwiftKVCTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = SwiftKVCTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyvive.SwiftKVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
