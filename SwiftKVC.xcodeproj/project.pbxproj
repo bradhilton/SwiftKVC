@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A215942B1B94D79300F2F665 /* SwiftKVC.h in Headers */ = {isa = PBXBuildFile; fileRef = A215942A1B94D79300F2F665 /* SwiftKVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A21594321B94D79300F2F665 /* SwiftKVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* SwiftKVC.framework */; settings = {ASSET_TAGS = (); }; };
+		A21594321B94D79300F2F665 /* SwiftKVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* SwiftKVC.framework */; };
 		A21594371B94D79300F2F665 /* SwiftKVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594361B94D79300F2F665 /* SwiftKVCTests.swift */; };
-		A21594421B94D7CD00F2F665 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* Model.swift */; settings = {ASSET_TAGS = (); }; };
-		A21594441B94D7DB00F2F665 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594431B94D7DB00F2F665 /* Property.swift */; settings = {ASSET_TAGS = (); }; };
-		A21594461B94D7E100F2F665 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594451B94D7E100F2F665 /* Extensions.swift */; settings = {ASSET_TAGS = (); }; };
-		A21594481B94D7E600F2F665 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594471B94D7E600F2F665 /* Error.swift */; settings = {ASSET_TAGS = (); }; };
-		A215944A1B94D85C00F2F665 /* SwiftKVC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A21594491B94D85C00F2F665 /* SwiftKVC.podspec */; settings = {ASSET_TAGS = (); }; };
+		A21594421B94D7CD00F2F665 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* Model.swift */; };
+		A21594441B94D7DB00F2F665 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594431B94D7DB00F2F665 /* Property.swift */; };
+		A21594461B94D7E100F2F665 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594451B94D7E100F2F665 /* Extensions.swift */; };
+		A21594481B94D7E600F2F665 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594471B94D7E600F2F665 /* Error.swift */; };
+		A215944A1B94D85C00F2F665 /* SwiftKVC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A21594491B94D85C00F2F665 /* SwiftKVC.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,9 +165,11 @@
 				TargetAttributes = {
 					A21594261B94D79300F2F665 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 					};
 					A21594301B94D79300F2F665 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -342,6 +344,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -359,6 +362,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyvive.SwiftKVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -369,6 +373,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyvive.SwiftKVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -379,6 +384,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skyvive.SwiftKVCTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
