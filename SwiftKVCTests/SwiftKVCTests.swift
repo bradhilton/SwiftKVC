@@ -41,20 +41,20 @@ class SwiftKVCTests: XCTestCase {
     
     func testNullabilty() {
         var person = john
-        XCTAssert(person.middleName == nil)
+        XCTAssertNil(person.middleName)
         person["middleName"] = "Jacob"
-        XCTAssert(person.middleName == "Jacob")
+        XCTAssertEqual(person.middleName, "Jacob")
         person["firstName"] = nil
-        XCTAssert(person.firstName == john.firstName)
+        XCTAssertEqual(person.firstName, john.firstName)
     }
-    
+
     func assert(person lh: Person, sameAsPerson rh: Person) {
-        XCTAssert(lh.firstName == rh["firstName"] as? String)
-        XCTAssert(lh.middleName == rh["middleName"] as? String)
-        XCTAssert(lh.lastName == rh["lastName"] as? String)
-        XCTAssert(lh.age == rh["age"] as? Int)
-        XCTAssert(lh.friends == rh["friends"] as! [Person])
-        XCTAssert(lh.bestFriend == rh["bestFriend"] as? Person)
+        XCTAssertEqual(lh.firstName, rh["firstName"] as? String)
+        XCTAssertEqual(lh.middleName, rh["middleName"] as? String)
+        XCTAssertEqual(lh.lastName, rh["lastName"] as? String)
+        XCTAssertEqual(lh.age, rh["age"] as? Int)
+        XCTAssertEqual(lh.friends, rh["friends"] as! [Person])
+        XCTAssertEqual(lh.bestFriend, rh["bestFriend"] as? Person)
     }
     
 }
