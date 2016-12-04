@@ -11,10 +11,7 @@
 		A215942B1B94D79300F2F665 /* SwiftKVC.h in Headers */ = {isa = PBXBuildFile; fileRef = A215942A1B94D79300F2F665 /* SwiftKVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A21594321B94D79300F2F665 /* SwiftKVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* SwiftKVC.framework */; };
 		A21594371B94D79300F2F665 /* SwiftKVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594361B94D79300F2F665 /* SwiftKVCTests.swift */; };
-		A21594421B94D7CD00F2F665 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* Model.swift */; };
-		A21594441B94D7DB00F2F665 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594431B94D7DB00F2F665 /* Property.swift */; };
-		A21594461B94D7E100F2F665 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594451B94D7E100F2F665 /* Extensions.swift */; };
-		A21594481B94D7E600F2F665 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594471B94D7E600F2F665 /* Error.swift */; };
+		A21594421B94D7CD00F2F665 /* SwiftKVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* SwiftKVC.swift */; };
 		A215944A1B94D85C00F2F665 /* SwiftKVC.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A21594491B94D85C00F2F665 /* SwiftKVC.podspec */; };
 		FC1762235DCB69D364D6D6A2 /* Pods_SwiftKVC_SwiftKVCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678E4C07F80BCF1342839B59 /* Pods_SwiftKVC_SwiftKVCTests.framework */; };
 /* End PBXBuildFile section */
@@ -40,10 +37,7 @@
 		A21594311B94D79300F2F665 /* SwiftKVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftKVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21594361B94D79300F2F665 /* SwiftKVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftKVCTests.swift; sourceTree = "<group>"; };
 		A21594381B94D79300F2F665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A21594411B94D7CD00F2F665 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		A21594431B94D7DB00F2F665 /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
-		A21594451B94D7E100F2F665 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		A21594471B94D7E600F2F665 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		A21594411B94D7CD00F2F665 /* SwiftKVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKVC.swift; sourceTree = "<group>"; };
 		A21594491B94D85C00F2F665 /* SwiftKVC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SwiftKVC.podspec; sourceTree = "<group>"; };
 		A298FE591DF360B900E916FB /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftKVC.playground; sourceTree = "<group>"; };
@@ -119,10 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				A215942A1B94D79300F2F665 /* SwiftKVC.h */,
-				A21594411B94D7CD00F2F665 /* Model.swift */,
-				A21594431B94D7DB00F2F665 /* Property.swift */,
-				A21594451B94D7E100F2F665 /* Extensions.swift */,
-				A21594471B94D7E600F2F665 /* Error.swift */,
+				A21594411B94D7CD00F2F665 /* SwiftKVC.swift */,
 				A215942C1B94D79300F2F665 /* Info.plist */,
 			);
 			path = SwiftKVC;
@@ -331,10 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A21594481B94D7E600F2F665 /* Error.swift in Sources */,
-				A21594441B94D7DB00F2F665 /* Property.swift in Sources */,
-				A21594461B94D7E100F2F665 /* Extensions.swift in Sources */,
-				A21594421B94D7CD00F2F665 /* Model.swift in Sources */,
+				A21594421B94D7CD00F2F665 /* SwiftKVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

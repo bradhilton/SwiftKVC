@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Reflection
 import SwiftKVC
 
 class SwiftKVCTests: XCTestCase {
@@ -28,7 +29,7 @@ class SwiftKVCTests: XCTestCase {
     }
     
     func testPerson() {
-        var person = john
+        let person = john
         assert(person: john, sameAsPerson: person)
         person["firstName"] = jacob.firstName
         person["middleName"] = jacob.middleName
@@ -40,10 +41,12 @@ class SwiftKVCTests: XCTestCase {
     }
     
     func testNullabilty() {
-        var person = john
+        let person = john
         XCTAssert(person.middleName == nil)
         person["middleName"] = "Jacob"
         XCTAssert(person.middleName == "Jacob")
+        person["middleName"] = nil
+        XCTAssert(person.middleName == nil)
         person["firstName"] = nil
         XCTAssert(person.firstName == john.firstName)
     }
@@ -57,9 +60,30 @@ class SwiftKVCTests: XCTestCase {
         XCTAssert(lh.bestFriend == rh["bestFriend"] as? Person)
     }
     
+    func testThrowingMethods() {
+        do {
+            let person = john
+            XCTAssert(try person.get(key: "firstName") as? String == john.firstName)
+            try person.set(value: "Jacob", key: "middleName")
+            XCTAssert(try person.get(key: "middleName") as? String == "Jacob")
+            try person.set(value: Optional<String>.none as Any, key: "middleName")
+            XCTAssert(try person.get(key: "middleName") as? String == nil)
+        } catch {
+            XCTFail(String(describing: error))
+        }
+        do {
+            let person = john
+            _ = try person.get(key: "unknownKey")
+            XCTFail("Should throw error")
+        } catch ReflectionError.instanceHasNoKey {
+        } catch {
+            XCTFail(String(describing: error))
+        }
+    }
+    
 }
 
-class Person : Model, Equatable {
+class Person : Object, Equatable {
     
     var firstName: String
     var middleName: String?
