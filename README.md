@@ -9,7 +9,7 @@ Or use the more verbose method to catch potential errors:
 ```swift
 var person = Person()
 do {
-  try person.setValue("John", forKey:"name")
+  try person.set(value: "John", key:"name")
 } catch {
   print(error)
 }
@@ -31,9 +31,12 @@ Alternatively, clone this repo or download it as a zip and include the classes i
 
 ## Usage
 
-To enable key-value coding for a native Swift structure or class, simply have it conform to the protocol `Model`:
+To enable key-value coding for a native Swift structure or class, simply have it conform to either `Value` or `Object` respectively:
 ```swift
-extension Person : Model {}
+struct Person : Value {
+  var name: String
+  var age: Int
+}
 ```
 You can then set and retrieve values from your model by key:
 ```swift
@@ -46,27 +49,15 @@ if let id = person["id"] as? Int {
 If you would like to handle possible errors, you can use the more verbose methods:
 ```swift
 do {
-  try person.setValue("John", forKey: "name")
-  try person.setValue(36, forKey: "age")
-  if let id = try person.valueForKey("id") as? Int {
+  try person.set(value: "John", key: "name")
+  try person.set(value: 36, key: "age")
+  if let id = try person.get(key: "id") as? Int {
     print(id)
   }
 } catch {
   print(error)
 }
 ```
-Be aware that every one of your model's properties must conform to the protocol `Property` like so:
-```swift
-extension MyCustomType : Property {}
-```
-Implicitly unwrapped optional properties will not work properly and should be avoided:
-```swift
-struct User : Model {
-  var id: String
-  var email: String! // Will not work as expected and may result in a fatal error if set or accessed
-}
-```
-There is another caveat when using classes. If your class inherits from a superclass with private properties, `SwiftKVC` will not work as expected and may fail.
 ## Author
 
 Brad Hilton, brad@skyvive.com
