@@ -9,7 +9,7 @@ Or use the more verbose method to catch potential errors:
 ```swift
 var person = Person()
 do {
-  try person.set(value: "John", key:"name")
+  try person.set(value: "John", key: "name")
 } catch {
   print(error)
 }
