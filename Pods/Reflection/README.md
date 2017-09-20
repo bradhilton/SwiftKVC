@@ -21,7 +21,7 @@ struct Person {
 }
 
 // Reflects the instance properties of type `Person`
-let properties = try properties(Person)
+let props = try properties(Person.self)
 
 var person = Person(firstName: "John", lastName: "Smith", age: 35)
 
@@ -46,7 +46,7 @@ import PackageDescription
 
 let package = Package(
     dependencies: [
-        .Package(url: "https://github.com/Zewo/Reflection.git", majorVersion: 0, minor: 14),
+        .Package(url: "https://github.com/Zewo/Reflection.git", majorVersion: 0, minor: 15),
     ]
 )
 ```
