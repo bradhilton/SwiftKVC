@@ -40,7 +40,7 @@
 		A21594411B94D7CD00F2F665 /* SwiftKVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftKVC.swift; sourceTree = "<group>"; };
 		A21594491B94D85C00F2F665 /* SwiftKVC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; path = SwiftKVC.podspec; sourceTree = "<group>"; };
 		A298FE591DF360B900E916FB /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftKVC.playground; sourceTree = "<group>"; };
+		A2A8279B1BD1D56D00E45CAA /* SwiftKVC.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SwiftKVC.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AEABA5BE5A3DBDF33D127BC6 /* Pods-SwiftKVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKVC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftKVC/Pods-SwiftKVC.release.xcconfig"; sourceTree = "<group>"; };
 		E4749953BA1EC37E91F84130 /* Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftKVC-SwiftKVCTests/Pods-SwiftKVC-SwiftKVCTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
