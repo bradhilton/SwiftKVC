@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
     s.osx.deployment_target = "10.9"
     s.source_files  = "SwiftKVC", "SwiftKVC/**/*.{swift,h,m}"
     s.requires_arc = true
-    s.dependency 'Reflection', '~> 0.15.0'
+    s.dependency 'Reflection', '~> 0.16.0'
 end
